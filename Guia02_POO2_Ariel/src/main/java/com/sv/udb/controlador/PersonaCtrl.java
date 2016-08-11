@@ -7,6 +7,8 @@ package com.sv.udb.controlador;
 
 import com.sv.udb.modelo.Persona;
 import com.sv.udb.recursos.Conexion;
+import java.io.File;
+import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,16 +25,16 @@ public class PersonaCtrl {
      
       Connection cn = new Conexion().getConn();
       try{
-           String Consulta="select codi_pers, nomb_pers, apel_pers, foto_pers, codi_tipo_pers, gene_pers,"
-                   + "fech_naci_pers, dui_pers, nit_pers, tipo_sang_pers, codi_ubic_pers,"
-                   + " fech_alta, fech_baja, esta from pers";
-           PreparedStatement cmd = cn.prepareStatement(Consulta);
-           ResultSet rs = cmd.executeQuery();
-           while(rs.next()){
-               System.out.println(rs.getString(2));
-               resp.add(new Persona(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getString(6),
-               rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getInt(11), rs.getString(12), rs.getString(13), rs.getInt(14)));
-           }
+//           String Consulta="select codi_pers, nomb_pers, apel_pers, foto_pers, codi_tipo_pers, gene_pers,"
+//                   + "fech_naci_pers, dui_pers, nit_pers, tipo_sang_pers, CODI_UBIC_GEOG,"
+//                   + " fech_alta, fech_baja, esta from pers";
+//           PreparedStatement cmd = cn.prepareStatement(Consulta);
+//           ResultSet rs = cmd.executeQuery();
+//           while(rs.next()){
+//               System.out.println(rs.getString(2));
+//               resp.add(new Persona(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getString(6),
+//               rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getInt(11), rs.getString(12), rs.getString(13), rs.getInt(14)));
+//           }
         }
         catch(Exception ex){
             ex.printStackTrace();
@@ -60,8 +62,16 @@ public class PersonaCtrl {
             PreparedStatement cmd = cn.prepareStatement(Consulta);
             cmd.setInt(1, obje.getCodiPers());
             cmd.setString(2, obje.getNombPers());
-            cmd.setString(3, obje.getApelPers());
-            cmd.setString(4, obje.getFotoPers());
+            cmd.setString(3, obje.getApelPers());            
+            
+             cmd.setString(4, obje.getFotoPers());  
+            
+//            FileInputStream fis = null;
+//               fis = new FileInputStream(obje.getFotoPers());
+//            cmd.setBinaryStream(4, fis, (int) obje.getFotoPers().length());       
+            
+            
+            
             cmd.setInt(5, obje.getCodiTipoPers());
             cmd.setString(6, obje.getGenePers());
             cmd.setString(7, obje.getFechNaciPers());

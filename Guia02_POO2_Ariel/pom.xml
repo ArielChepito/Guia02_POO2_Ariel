@@ -42,10 +42,30 @@
         </dependency>
         <!-- https://mvnrepository.com/artifact/displaytag/displaytag -->
         <dependency>
+            <groupId>org.ajaxtags</groupId>
+            <artifactId>ajaxtags</artifactId>
+            <version>1.1.5</version>
+        </dependency>
+        
+        <dependency>
             <groupId>displaytag</groupId>
             <artifactId>displaytag</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/taglibs/standard -->
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
+
+
     </dependencies>
 
     <build>
