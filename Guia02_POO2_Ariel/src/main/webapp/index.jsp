@@ -12,7 +12,7 @@
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>GUIA 1 POO2 Ariel</title>
+    <title>GUIA 2</title>
     <meta charset="utf-8">
 <!-- Author: Aniuska Maita @aniusk18-->
     <!-- This file has been downloaded from Codepen.io. Enjoy! 
@@ -45,83 +45,116 @@
     <div class="container">
   <!--head form-->
   <section>
-    <h1>GUIA 1 Ariel</h1>
+    <h1>GUIA 2 Ariel</h1>
   </section>
   <!--end head form-->
   <!--body form-->
-  <section class="col-md-12 form-horizontal">
+  <section class="col-md-12">
+    <form class="form-horizontal">
+      <div class="form-group barra">
+      <div class="col-md-6">
+      		<label for="inputEmail3" class="control-label">Nombre</label>
+          <input type="text" class="form-control" name="txtNombre" id="txtNombre">
+      </div>
+      <div class="col-md-6">
+      		  <label for="inputEmail3" class="control-label">Apellido</label>
+          <input type="text" class="form-control" name="txtApellido" id="txtApellido">
+      </div>
+      <div class="col-md-6">
+      		<label for="inputEmail3" class="control-label">Foto</label>
+          <input type="text" class="form-control" name="txtFoto" id="txtFoto">
+      </div>
+      <div class="col-md-6">
+      		<label for="inputEmail3" class="control-label">Tipo:</label>
+          <select name="cmbTipo" class="form-control" id="cmbTipo">
+                  
+                   </select>
+      </div>
+      <div class="col-md-6">
+      		<label for="inputEmail3" class="control-label">Genero</label>
+                   <select name="cmbGenero" class="form-control" id="cmbGenero">
+                   <option value="F" >Femenino</option>
+                   <option value="M" >Masculino</option>
+                   </select>
+      </div>
       
-    <form class="" method="post" action="scripts/reporte1.jsp"target="_blank">
-      <div class="form-group barra">
-        <label for="inputEmail3" class="control-label">Visitas por unidad Organizativa. Elige una unidad</label>
-         <br>              
-          
-          
-          <select name="select" class="form-control" id="select">
-           <jsp:useBean id="beanUnidadCtrl" class="com.sv.udb.controlador.UnidadCtrl" scope="page"/>
-                                        <c:forEach items="${beanUnidadCtrl.consTodo()}" var="fila">
-                                            <c:choose>
-                                                <c:when test="${fila.codiUnid eq cmbUnidad}">
-                                                    <option name="codi_unid" value="${fila.codiUnid}" selected="">${fila.nombUnid}</option>
-                                                </c:when>
-                                                <c:otherwise>
-                                            <option name="codi_unid" value="${fila.codiUnid}">${fila.nombUnid}</option>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </c:forEach>
-                                        </select>
-<br>
-        <div class="col-md-12">
-          <button type="submit" class="btn  center-block">Imprimir Reporte</button>
-        </div>
+      <div class="col-md-6">
+      <label for="inputPassword3" class="control-label">Fecha de nacimiento </label>       
+			        <input type="date"class="form-control" name="txtFechNaci" id="txtFechNaci">
       </div>
-    </form>
-         <form class="" method="post" action="scripts/reporte2.jsp" target="_blank">                                 
-      <div class="form-group barra">
-        <label for="inputPassword3" class="control-label">Visitas por persona. Elige una persona!</label>
-         <br>  
-     
+      <div class="col-md-4">
+      <label for="inputEmail3" class="control-label">DUI</label>
+          <input type="text" class="form-control" name="txtDUI" id="txtDUI">
+      </div>
+      <div class="col-md-4">
+       <label for="inputEmail3" class="control-label">NIT</label>
+          <input type="text" class="form-control" name="txtNIT" id="txtNIT">
+      </div>
+      <div class="col-md-4">
+      
+          <label for="inputEmail3" class="control-label">Tipo de sangre</label>
+          <select name="cmbTipoSangre" class="form-control" id="cmbTipoSangre">
+                   <option value="A+" >A+</option>
+                   <option value="A-" >A-</option>
+                   <option value="B+" >B+</option>
+                   <option value="B-" >B-</option>
+                   <option value="AB+" >AB+</option>
+                   <option value="AB-" >AB-</option>
+                   <option value="O+" >O+</option>
+                   <option value="O-" >O-</option>
+                   <option value="AB+" >AB+</option>
+                   </select>
+      </div>     
+             </div>     
+              <div class="form-group barra">  
          
-          <select name="select2" class="form-control" id="select2">
-          <jsp:useBean id="beanPersonaCtrl" class="com.sv.udb.controlador.PersonaCtrl" scope="page"/>
-                                        <c:forEach items="${beanPersonaCtrl.consTodo()}" var="fila">
-                                            <c:choose>
-                                                <c:when test="${fila.codiPers eq cmbPersona}">
-                                                    <option name="codi_pers" value="${fila.codiPers}" selected="">${fila.nombPers} ${fila.apelPers} - ${fila.duiPers}</option>
-                                                </c:when>
-                                                <c:otherwise>
-                                            <option name="codi_pers" value="${fila.codiPers}">${fila.nombPers} ${fila.apelPers} - ${fila.duiPers}</option>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </c:forEach>
-                                        </select>
-<br>
-        <div class="col-md-12">
-          <button type="submit" class="btn  center-block">Imprimir Reporte</button>
-        </div>
-        
-      </div>
-         </form>
-    <form class="" method="post" action="scripts/reporte3.jsp" target="_blank">  
-      <div class="form-group barra">
-        <label for="inputPassword3" class="control-label">Fecha inicio </label>       
+          
 
-        <input type="date"class="form-control" name="date1" id="date1">
-        
-        
-		<br>
-        <label for="inputPassword3" class="control-label">Fecha fin </label>       
-
-        <input type="date"class="form-control" name="date2" id="date2">
-        
-        
-        <br>
-        <div class="col-md-12">
-          <button type="submit" class="btn  center-block">Imprimir Reporte</button>
+        <div class="col-md-3">
+          <button type="submit" class="btn">Guardar</button>
         </div>
-      </div>
+        <div class="col-md-3">
+          <button type="submit" class="btn">Editar</button>
+        </div>
+        <div class="col-md-3">
+          <button type="submit" class="btn">Eliminar</button>
+        </div>
+        <div class="col-md-3">
+          <button type="submit" class="btn">Ver reporte</button>
+        </div>
+        <br><br><br>
+        <div class="col-md-12">
+         <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table></div>
+      
+     
     
     </form>
+    </div>
   </section>
   <!--end body form-->
 </div>
