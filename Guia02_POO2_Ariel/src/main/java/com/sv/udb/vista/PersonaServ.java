@@ -40,7 +40,7 @@ public class PersonaServ extends HttpServlet {
             if(esValido)
             {
                 String mens = "";
-                String CRUD = request.getParameter("cursBton");
+                String CRUD = request.getParameter("cursBoton");
                 System.out.println("ERROR:"+CRUD);
                 if(CRUD.equals("Guardar"))
                 {
